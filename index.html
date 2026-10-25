@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rushitha Singamaneni – Backend Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EAEFF5; --surface:#F7F9FC; --ink:#142038; --muted:#55627A; --line:#C9D3E2;
+  --accent:#2F5BEA; --accent-ink:#FFFFFF; --ok:#17806D;
+  --sans:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1626; --surface:#162136; --ink:#E6ECF7; --muted:#9AA8C2; --line:#27344E;
+    --accent:#7C9BFF; --accent-ink:#0E1626; --ok:#4FD1B5; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1626; --surface:#162136; --ink:#E6ECF7; --muted:#9AA8C2; --line:#27344E;
+  --accent:#7C9BFF; --accent-ink:#0E1626; --ok:#4FD1B5; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:260px 1fr;gap:64px}
+aside{position:sticky;top:0;align-self:start;padding:48px 0;height:100vh;height:100dvh;display:flex;flex-direction:column;gap:28px}
+.name{font-size:1.5rem;font-weight:800;line-height:1.1;margin:0}
+.role{color:var(--muted);margin:6px 0 0;font-size:.95rem}
+nav ul{list-style:none;margin:0;padding:0;font-family:var(--mono);font-size:.9rem}
+nav a{display:block;padding:5px 0 5px 14px;border-left:2px solid var(--line);text-decoration:none;color:var(--muted)}
+nav a:hover,nav a.on{color:var(--ink);border-left-color:var(--accent)}
+.theme{margin-top:auto;align-self:flex-start;font:inherit;font-size:.85rem;background:none;border:1px solid var(--line);color:var(--muted);padding:6px 12px;border-radius:999px;cursor:pointer}
+.theme:hover{color:var(--ink);border-color:var(--ink)}
+main{padding:48px 0 96px;min-width:0}
+section{padding:0 0 72px}
+h1{font-size:clamp(2.4rem,6vw,4.4rem);line-height:1.02;font-weight:800;letter-spacing:-.02em;margin:0 0 24px;max-width:15ch}
+h2{font-size:1.6rem;font-weight:800;margin:0 0 24px;letter-spacing:-.01em}
+.lede{font-size:1.2rem;max-width:56ch;color:var(--muted);margin:0 0 28px}
+.status{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.85rem;background:var(--surface);border:1px solid var(--line);padding:8px 14px;border-radius:8px;margin-bottom:28px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--ok)}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:600;border:1px solid var(--ink)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:hover{filter:brightness(1.08)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.filters button{font:inherit;font-family:var(--mono);font-size:.85rem;background:none;color:var(--muted);border:1px solid var(--line);padding:6px 14px;border-radius:999px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.proj{display:grid;gap:0;border-top:1px solid var(--line)}
+.p{padding:24px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:8px 24px}
+.p[hidden]{display:none}
+.p h3{margin:0;font-size:1.25rem}
+.p p{margin:0;grid-column:1;max-width:60ch;color:var(--muted)}
+.p .links{grid-column:2;grid-row:1;display:flex;gap:16px;font-family:var(--mono);font-size:.85rem}
+.tags{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;font-family:var(--mono);font-size:.78rem;color:var(--ok)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.skills h3{font-size:1rem;margin:0 0 8px}
+.skills p{margin:0;font-family:var(--mono);font-size:.88rem;color:var(--muted)}
+.tl{list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 32px}
+.tl li::before{content:"";position:absolute;left:-29px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.tl .when{font-family:var(--mono);font-size:.82rem;color:var(--muted)}
+.tl h3{margin:2px 0 6px;font-size:1.15rem}
+.tl p{margin:0;max-width:60ch;color:var(--muted)}
+.contact a.mail{font-size:clamp(1.4rem,3.4vw,2.2rem);font-weight:800;text-decoration-thickness:3px;text-decoration-color:var(--accent);text-underline-offset:6px}
+.contact ul{list-style:none;padding:0;margin:24px 0 0;display:flex;flex-wrap:wrap;gap:20px;font-family:var(--mono);font-size:.9rem}
+@media (max-width:900px){
+  .wrap{grid-template-columns:1fr;gap:0}
+  aside{position:static;height:auto;padding:28px 0 8px;gap:16px}
+  nav ul{display:flex;flex-wrap:wrap;gap:4px 18px}
+  nav a{border-left:0;padding:4px 0}
+  .theme{margin-top:0}
+  main{padding-top:24px}
+  .p{grid-template-columns:1fr}.p .links{grid-column:1;grid-row:auto}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <aside>
+    <div>
+      <p class="name">Rushitha Singamaneni</p>
+      <p class="role">Backend Software Engineer, Bengaluru</p>
+    </div>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#top" class="on">home.md</a></li>
+        <li><a href="#projects">projects/</a></li>
+        <li><a href="#skills">skills.json</a></li>
+        <li><a href="#experience">experience.log</a></li>
+        <li><a href="#contact">contact.txt</a></li>
+      </ul>
+    </nav>
+    <button class="theme" id="theme" type="button">Switch theme</button>
+  </aside>
+
+  <main id="top">
+    <section>
+      <div class="status"><span class="dot"></span>Open to new roles</div>
+      <h1>I build backend systems that scale.</h1>
+      <p class="lede">Backend engineer with 2+ years of experience designing Java and Spring Boot microservices, shipping them with Docker, Kubernetes and CI/CD, and debugging distributed systems on Linux.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button type="button" data-f="all" aria-pressed="true">All</button>
+        <button type="button" data-f="web" aria-pressed="false">Web</button>
+        <button type="button" data-f="backend" aria-pressed="false">Backend</button>
+        <button type="button" data-f="ml" aria-pressed="false">ML</button>
+      </div>
+      <div class="proj">
+        <article class="p" data-t="backend">
+          <h3>Order Management Automation</h3>
+          <div class="links"><a href="https://github.com/rushitha514">GitHub</a></div>
+          <p>Backend workflow automation that improves SLA monitoring and reduces manual processing time.</p>
+          <div class="tags"><span>ServiceNow</span><span>REST APIs</span><span>Slack</span></div>
+        </article>
+        <article class="p" data-t="web">
+          <h3>Sorting Visualizer</h3>
+          <div class="links"><a href="https://github.com/rushitha514">GitHub</a></div>
+          <p>Web app that visualizes Quick Sort and Merge Sort step by step, making the algorithms easier to learn.</p>
+          <div class="tags"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+        </article>
+        <article class="p" data-t="ml">
+          <h3>Emotion Detection Using CNN</h3>
+          <div class="links"><a href="https://github.com/rushitha514">GitHub</a></div>
+          <p>Deep learning model for facial emotion recognition with high prediction accuracy.</p>
+          <div class="tags"><span>Python</span><span>CNN</span><span>Deep learning</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div><h3>Languages</h3><p>Java, C++, Python, JavaScript, SQL</p></div>
+        <div><h3>Frameworks</h3><p>Spring Boot, REST, Microservices, Hibernate, JPA</p></div>
+        <div><h3>Tools</h3><p>Docker, Kubernetes, Git, Jenkins, Maven, Postman, Jira</p></div>
+        <div><h3>Concepts</h3><p>Data Structures, OOP, System Design, Distributed Systems, Multithreading, CI/CD</p></div>
+        <div><h3>Platforms</h3><p>Linux, ServiceNow</p></div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul class="tl">
+        <li><div class="when">Oct 2024 – Present</div><h3>System Engineer (Innovator), TCS</h3><p>Built 6+ Spring Boot microservices for internal platforms used by 500+ people, cut API latency from 900ms to 500ms, containerized 10+ services on Kubernetes, automated CI/CD (35% less manual deployment effort) and resolved 20+ production incidents.</p></li>
+        <li><div class="when">Jan – Jun 2024</div><h3>Customer Experience Application Intern, Equinix</h3><p>Automated SLA tracking for 100+ weekly order tasks, auto-generated and shared 50+ quote PDFs a week via Slack, and cut manual follow-up effort by 30% with reminder and escalation automation.</p></li>
+        <li><div class="when">May – Jul 2023</div><h3>Machine Learning Intern, AiEnsured</h3><p>Trained CNN models on 10k+ images to 92% validation accuracy, improved generalization by 8% and tracked 25+ experiments with MLflow.</p></li>
+        <li><div class="when">Graduated 2024</div><h3>B.Tech, Electronics and Communication, NIT Patna</h3><p>CGPA 8.79.</p></li>
+      </ul>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <a class="mail" href="mailto:rushithasingamaneni@gmail.com">rushithasingamaneni@gmail.com</a>
+      <ul>
+        <li><a href="https://github.com/rushitha514">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/singamaneni-rushitha">LinkedIn</a></li>
+        <li><a href="https://leetcode.com/u/rushitha514">LeetCode</a></li>
+        <li><a href="https://www.geeksforgeeks.org/profile/rushisingamaneni">GeeksforGeeks</a></li>
+        <li><a href="Rushitha_Singamaneni_Resume.pdf">Résumé (PDF)</a></li>
+      </ul>
+    </section>
+  </main>
+</div>
+
+<script>
+(function(){
+  var btns=document.querySelectorAll('.filters button'),items=document.querySelectorAll('.p');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    var f=b.dataset.f;
+    btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    items.forEach(function(p){p.hidden=!(f==='all'||p.dataset.t.split(' ').indexOf(f)>-1)});
+  })});
+  var root=document.documentElement;
+  document.getElementById('theme').addEventListener('click',function(){
+    var dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme=dark?'light':'dark';
+  });
+  var links=document.querySelectorAll('nav a'),secs=[].slice.call(document.querySelectorAll('main section[id]'));
+  addEventListener('scroll',function(){
+    var y=scrollY+120,cur='top';
+    secs.forEach(function(s){if(s.offsetTop<=y)cur=s.id});
+    links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur)});
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
